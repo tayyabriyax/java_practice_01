@@ -14,10 +14,27 @@ public class Main {
         // System.out.println("The unicode of char 'A' is " + charUnicode);
 
         // Bitwise Operator
-        byte num1 = 8;
-        int num2 = (byte) (num1 << 6);
-        int num3 = num1 << 6;
+        // byte num1 = 8;
+        // int num2 = (byte) (num1 << 6);
+        // int num3 = num1 << 6;
 
-        System.out.println(num2 + " , " + num3);
+        // System.out.println(num2 + " , " + num3);
+
+        // Switch Statement
+        int num = 2;
+        switch(num){
+            case 1:
+                System.out.println("Number is 1");
+                break;
+            case 2:
+                System.out.println("Number is 2");
+                break;
+            case 3:
+                System.out.println("Number is 3");
+                break;
+            default:
+                System.out.println("Number is greater than 3");
+                break;
+        }
     }
 }
