@@ -21,6 +21,7 @@ public class Main {
         // System.out.println(num2 + " , " + num3);
 
         // Switch Statement
+        /*
         int num = 2;
         switch(num){
             case 1:
@@ -36,5 +37,15 @@ public class Main {
                 System.out.println("Number is greater than 3");
                 break;
         }
+        */
+
+        // Arrays
+        int[] rollNumbers = new int[10];
+
+        for(int i = 0, j = 101; i < 10; i++, j++){
+            rollNumbers[i] = j;
+        }
+
+        System.out.println(rollNumbers[9]);
     }
 }
