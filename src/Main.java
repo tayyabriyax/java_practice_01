@@ -1,51 +1,38 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Student s1 = new Student();
 
-        // Explicit Type Casting
-        // int num1 = 500;
-        // byte num2;
-        // num2 = (byte) num1;
-        // System.out.println(num2);
+        s1.name = "Hammad Ahmad";
+        s1.age = 22;
+        s1.rollNo = 16;
+        s1.college = "Punjab Group Of Colleges";
+        s1.hobbies[0] = "Reading";
+        s1.hobbies[1] = "Playing";
 
-        // char char1 = 'A';
-        // int charUnicode;
-        // charUnicode = char1;
-        // System.out.println("The unicode of char 'A' is " + charUnicode);
+        s1.printDetails();
+    }
+}
 
-        // Bitwise Operator
-        // byte num1 = 8;
-        // int num2 = (byte) (num1 << 6);
-        // int num3 = num1 << 6;
+class Student {
+    String name;
+    int age;
+    int rollNo;
+    String college;
+    String[] hobbies = new String[2];
 
-        // System.out.println(num2 + " , " + num3);
+    void read() {
+        System.out.println("Student is reading...");
+    }
 
-        // Switch Statement
-        /*
-        int num = 2;
-        switch(num){
-            case 1:
-                System.out.println("Number is 1");
-                break;
-            case 2:
-                System.out.println("Number is 2");
-                break;
-            case 3:
-                System.out.println("Number is 3");
-                break;
-            default:
-                System.out.println("Number is greater than 3");
-                break;
-        }
-        */
+    void write() {
+        System.out.println("Student is writing...");
+    }
 
-        // Arrays
-        int[] rollNumbers = new int[10];
-
-        for(int i = 0, j = 101; i < 10; i++, j++){
-            rollNumbers[i] = j;
-        }
-
-        System.out.println(rollNumbers[9]);
+    void printDetails() {
+        System.out.println("My name is " + name);
+        System.out.println("My age is " + age);
+        System.out.println("My roll number is " + rollNo);
+        System.out.println("My college is " + college);
+        System.out.println("My hobbies are " + hobbies[0] + ", " + hobbies[1]);
     }
 }
