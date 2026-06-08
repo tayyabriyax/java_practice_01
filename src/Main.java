@@ -1,13 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        Student s1 = new Student();
-
-        s1.name = "Hammad Ahmad";
-        s1.age = 22;
-        s1.rollNo = 16;
-        s1.college = "Punjab Group Of Colleges";
-        s1.hobbies[0] = "Reading";
-        s1.hobbies[1] = "Playing";
+        Student s1 = new Student(
+                "Umair Ilyas",
+                21,
+                16,
+                "Punjab Group of Colleges"
+        );
 
         s1.printDetails();
     }
@@ -18,7 +16,29 @@ class Student {
     int age;
     int rollNo;
     String college;
-    String[] hobbies = new String[2];
+
+    Student(){
+        this("Unknown", 0, 0, "Unknown");
+    }
+
+    Student(String name){
+        this(name, 0, 0, "Unknown");
+    }
+
+    Student(String name, int age){
+        this(name, age, 0, "Unknown");
+    }
+
+    Student(String name, int age, int rollNo){
+        this(name, age, rollNo, "Unknown");
+    }
+
+    Student(String name, int age, int rollNo, String college){
+        this.name = name;
+        this.age = age;
+        this.rollNo = rollNo;
+        this.college = college;
+    }
 
     void read() {
         System.out.println("Student is reading...");
@@ -33,6 +53,5 @@ class Student {
         System.out.println("My age is " + age);
         System.out.println("My roll number is " + rollNo);
         System.out.println("My college is " + college);
-        System.out.println("My hobbies are " + hobbies[0] + ", " + hobbies[1]);
     }
 }
