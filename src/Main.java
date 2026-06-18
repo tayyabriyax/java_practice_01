@@ -1,57 +1,62 @@
 public class Main {
     public static void main(String[] args) {
-        Student s1 = new Student(
-                "Umair Ilyas",
-                21,
-                16,
-                "Punjab Group of Colleges"
-        );
+        Car car = new Car("Toyota", "Revo");
+        System.out.println(car.name);
 
-        s1.printDetails();
+        Car electricCar = new ElectricCar("Tesla", "Model S");
+        System.out.println(electricCar.name);
+
+        Car gasolineCar = new GasolineCar("Honda", "Civic");
+        System.out.println(gasolineCar.name);
     }
 }
 
-class Student {
+class Car {
     String name;
-    int age;
-    int rollNo;
-    String college;
+    String model;
 
-    Student(){
-        this("Unknown", 0, 0, "Unknown");
+    // Constructors
+    Car() {
+        this("Unknown", "Unknown");
     }
 
-    Student(String name){
-        this(name, 0, 0, "Unknown");
+    Car(String name) {
+        this(name, "Unknown");
     }
 
-    Student(String name, int age){
-        this(name, age, 0, "Unknown");
-    }
-
-    Student(String name, int age, int rollNo){
-        this(name, age, rollNo, "Unknown");
-    }
-
-    Student(String name, int age, int rollNo, String college){
+    Car(String name, String model) {
         this.name = name;
-        this.age = age;
-        this.rollNo = rollNo;
-        this.college = college;
+        this.model = model;
     }
 
-    void read() {
-        System.out.println("Student is reading...");
+}
+
+class ElectricCar extends Car {
+    // Constructors
+    ElectricCar(String name, String model) {
+        super(name, model);
     }
 
-    void write() {
-        System.out.println("Student is writing...");
+    ElectricCar(String name) {
+        super(name);
     }
 
-    void printDetails() {
-        System.out.println("My name is " + name);
-        System.out.println("My age is " + age);
-        System.out.println("My roll number is " + rollNo);
-        System.out.println("My college is " + college);
+    ElectricCar() {
+        super();
+    }
+}
+
+class GasolineCar extends Car {
+    // Constructors
+    GasolineCar(String name, String model) {
+        super();
+    }
+
+    GasolineCar(String name) {
+        super(name);
+    }
+
+    GasolineCar() {
+        super();
     }
 }
