@@ -5,13 +5,24 @@ public class Main {
 
         Car electricCar = new ElectricCar("Tesla", "Model S");
         System.out.println(electricCar.name);
+        electricCar.start();
 
         Car gasolineCar = new GasolineCar("Honda", "Civic");
         System.out.println(gasolineCar.name);
     }
 }
 
-class Car {
+interface Vehicle {
+    void start();
+
+    void drive();
+
+    void brake();
+
+    void turnOff();
+}
+
+class Car implements Vehicle {
     String name;
     String model;
 
@@ -27,6 +38,26 @@ class Car {
     Car(String name, String model) {
         this.name = name;
         this.model = model;
+    }
+
+    @Override
+    public void start() {
+        System.out.println("Car is Started !");
+    }
+
+    @Override
+    public void drive() {
+        System.out.println("Car is Driving !");
+    }
+
+    @Override
+    public void brake() {
+        System.out.println("Car is Braking !");
+    }
+
+    @Override
+    public void turnOff() {
+        System.out.println("Car is Turned OFF !");
     }
 
 }
@@ -49,7 +80,7 @@ class ElectricCar extends Car {
 class GasolineCar extends Car {
     // Constructors
     GasolineCar(String name, String model) {
-        super();
+        super(name, model);
     }
 
     GasolineCar(String name) {
