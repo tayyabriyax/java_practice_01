@@ -1,4 +1,4 @@
-public class Main {
+public class InterfacePractice {
     public static void main(String[] args) {
         Car car = new Car("Toyota", "Revo");
         System.out.println(car.name);
